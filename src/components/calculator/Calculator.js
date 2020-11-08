@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 function Calculator () {
 
     const [result, setResult] = useState(0)
-    const [consumption, setConsumption] = useState(0)
-    const [city, setCity] = useState("")
+    const [consumption, setConsumption] = useState("")
+    const [city, setCity] = useState("Toxy City")
 
     const sumValues = (consumption, city) => {
         return (
@@ -12,14 +12,16 @@ function Calculator () {
             )
     }
 
+
     return (
             <>
                 <h1>Hellor world from calculator</h1>
                 <div className="consumption">
                     <label>Consumo médio anual:</label><br></br>
-                    <input type="number" className="input" placeholder="Ex: 250"
+                    {/* <input type="number" className="input" placeholder="Ex: 250"
                     onChangeText={(valueConsu) => valueConsu.length ? setConsumption(parseInt(valueConsu)): setConsumption(0)}
-                    value={consumption.toString(10)}>
+                    value={consumption.toString(10)}> */}
+                    <input type="number" className="input" placeholder="em KWh">
                     </input>
                 </div>
                 <div className="select">
