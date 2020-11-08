@@ -7,7 +7,9 @@ function Calculator () {
     const [city, setCity] = useState("")
 
     const sumValues = (consumption, city) => {
-        return consumption + city
+        return (
+            result = consumption + city
+            )
     }
 
     return (
@@ -29,6 +31,14 @@ function Calculator () {
                         <option value="belem">Belem-PA</option>
                         <option value="cubatão">Cubatão-SP</option>
                         <option value="curitiba">Curitiba-PR</option>
+                    </select>
+                </div>
+                <div className="classification">
+                    <label>Classificação:</label>
+                    <select name="classification">
+                        <option value="30">Monofásico</option>
+                        <option value="50">Bifásico</option>
+                        <option value="100">Trifásico</option>
                     </select>
                 </div>
                 <div className="result">
