@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './calculator.css'
 
 function Calculator () {
 
@@ -19,41 +20,53 @@ function Calculator () {
         setMinCost(event.target.value)
     }
  
-    return (
-            <> 
-                <h1>Hellor world from calculator</h1> 
+    function calFotoVoltaic() {
+        const fotoVoltaic = Math.ceil((((consumption-minCost)/30)/(city*0.8))/0.26)
 
-                <div className="select">
-                    <label>Cidade:</label>
-                    <select name="city" onChange={getCity}>
-                        <option value="default">--selecione--</option>
-                        <option value="4.91">Campinas-SP</option>
-                        <option value="5.60">Teresina-PI</option>
-                        <option value="4.71">Belem-PA</option>
-                        <option value="3.87">Cubatão-SP</option>
-                        <option value="4.19">Curitiba-PR</option>
-                    </select>
-                </div>
-                <div className="classification">
-                    <label>Classificação:</label>
-                    <select name="classification" onChange={getMinCost}>
-                        <option value="30">Monofásico</option>
-                        <option value="50">Bifásico</option>
-                        <option value="100">Trifásico</option>
-                    </select>
-                </div>
-                <div className="consumption">
-                    <label>Consumo médio anual:</label><br></br>
-                    {/* <input type="number" className="input" placeholder="Ex: 250"
-                    onChangeText={(valueConsu) => valueConsu.length ? setConsumption(parseInt(valueConsu)): setConsumption(0)}
-                    value={consumption.toString(10)}> */}
-                    <input type="number" name="consumption" className="input" placeholder="em KWh" onChange={getValue}>
-                    </input>
-                </div>
-                <div className="result">
-                    <label name="result"></label>
-                    <span>result came here: {consumption} -- {city} -- {minCost}</span>
-                </div>
+        setResult(fotoVoltaic)
+        console.log(result)
+    }
+
+    return (
+            <>
+                <container>
+                    <h1>Hellor world from calculator</h1> 
+
+                    <div className="select">
+                        <label>Cidade:</label>
+                        <select name="city" onChange={getCity}>
+                            <option value="default">--selecione--</option>
+                            <option value="4.91">Campinas-SP</option>
+                            <option value="5.60">Teresina-PI</option>
+                            <option value="4.71">Belem-PA</option>
+                            <option value="3.87">Cubatão-SP</option>
+                            <option value="4.19">Curitiba-PR</option>
+                        </select>
+                    </div>
+                    <div className="classification">
+                        <label>Classificação:</label>
+                        <select name="classification" onChange={getMinCost}>
+                            <option value="30">Monofásico</option>
+                            <option value="50">Bifásico</option>
+                            <option value="100">Trifásico</option>
+                        </select>
+                    </div>
+                    <div className="consumption">
+                        <label>Consumo médio anual:</label><br></br>
+                        {/* <input type="number" className="input" placeholder="Ex: 250"
+                        onChangeText={(valueConsu) => valueConsu.length ? setConsumption(parseInt(valueConsu)): setConsumption(0)}
+                        value={consumption.toString(10)}> */}
+                        <input type="number" name="consumption" className="input" placeholder="em KWh" onChange={getValue}>
+                        </input>
+                    </div>
+                    <div>
+                        <button className="calc-button" onClick={calFotoVoltaic}>Calcular</button>
+                    </div>
+                    <div className="result">
+                        <label name="result"></label>
+                        <span>Quantidade de placas Fotovoltaicas necessárias: {result}</span>
+                    </div>
+                </container> 
             </>
     )
 }
