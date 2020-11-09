@@ -6,13 +6,17 @@ function Calculator () {
     const [consumption, setConsumption] = useState("")
     const [city, setCity] = useState("Toxy City")
 
-    const sumValues = (consumption, city) => {
-        return (
-            result = consumption + city
-            )
+    // const sumValues = (consumption, city) => {
+    //     return (
+    //         result = consumption + city
+    //         )
+    // }
+    function getValue(event) {
+        const { name, value } = event.target
+        
+        console.log(event.target)
     }
-
-
+ 
     return (
             <>
                 <h1>Hellor world from calculator</h1>
@@ -21,7 +25,7 @@ function Calculator () {
                     {/* <input type="number" className="input" placeholder="Ex: 250"
                     onChangeText={(valueConsu) => valueConsu.length ? setConsumption(parseInt(valueConsu)): setConsumption(0)}
                     value={consumption.toString(10)}> */}
-                    <input type="number" className="input" placeholder="em KWh">
+                    <input type="number" name="consumption" className="input" placeholder="em KWh" onChange={getValue}>
                     </input>
                 </div>
                 <div className="select">
@@ -45,7 +49,7 @@ function Calculator () {
                 </div>
                 <div className="result">
                     <label name="result"></label>
-                    <span>result came here: {result}</span>
+                    <span>result came here: {consumption}</span>
                 </div>
             </>
     )
