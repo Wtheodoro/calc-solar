@@ -3,33 +3,40 @@ import React, { useState } from 'react'
 function Calculator () {
 
     const [consumption, setConsumption] = useState(0)
-    const [city, setCity] = useState("Toxy City")
+    const [city, setCity] = useState(5)
+    const [minCost, setMinCost] = useState(30)
     const [result, setResult] = useState(0)
 
     function getValue(event) {
-        setConsumption(event.value)
-        
-        setConsumption(consumption + 1)
+        setConsumption(event.target.value)
+    }
+
+    function getCity(event) {
+        setCity(event.target.value)
+    }
+
+    function getMinCost(event) {
+        setMinCost(event.target.value)
     }
  
     return (
             <> 
                 <h1>Hellor world from calculator</h1> 
-                
+
                 <div className="select">
                     <label>Cidade:</label>
-                    <select name="city">
+                    <select name="city" onChange={getCity}>
                         <option value="default">--selecione--</option>
-                        <option value="campinas">Campinas-SP</option>
-                        <option value="teresina">Teresina-PI</option>
-                        <option value="belem">Belem-PA</option>
-                        <option value="cubatão">Cubatão-SP</option>
-                        <option value="curitiba">Curitiba-PR</option>
+                        <option value="4.91">Campinas-SP</option>
+                        <option value="5.60">Teresina-PI</option>
+                        <option value="4.71">Belem-PA</option>
+                        <option value="3.87">Cubatão-SP</option>
+                        <option value="4.19">Curitiba-PR</option>
                     </select>
                 </div>
                 <div className="classification">
                     <label>Classificação:</label>
-                    <select name="classification">
+                    <select name="classification" onChange={getMinCost}>
                         <option value="30">Monofásico</option>
                         <option value="50">Bifásico</option>
                         <option value="100">Trifásico</option>
@@ -45,7 +52,7 @@ function Calculator () {
                 </div>
                 <div className="result">
                     <label name="result"></label>
-                    <span>result came here: {consumption} -- {city} -- {result}</span>
+                    <span>result came here: {consumption} -- {city} -- {minCost}</span>
                 </div>
             </>
     )
