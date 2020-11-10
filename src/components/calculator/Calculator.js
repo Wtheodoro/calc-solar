@@ -30,7 +30,7 @@ function Calculator () {
     return (
             <>
                 <container>
-                    <h1>Calculador de paineis solares</h1> 
+                    <h1>Quer saber quantos paineis são necessárias para abastecer sua casa?</h1> 
 
                     <div className="select">
                         <label>Cidade:</label>
