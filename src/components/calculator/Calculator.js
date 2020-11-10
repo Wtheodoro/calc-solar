@@ -30,7 +30,7 @@ function Calculator () {
     return (
             <>
                 <container>
-                    <h1>Hellor world from calculator</h1> 
+                    <h1>Calculador de paineis solares</h1> 
 
                     <div className="select">
                         <label>Cidade:</label>

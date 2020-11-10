@@ -1,12 +1,13 @@
 import './App.css';
-import Calculator from './components/calculator/Calculator'
-import Header from './components/Header/Header'
+import Page from './components/Page/Page'
+// import Calculator from './components/calculator/Calculator'
+
 
 function App() {
   return (
     <div className="page">
-      <Header />
-      <Calculator />
+      <Page />
+      {/* <Calculator /> */}
     </div>
   );
 }
