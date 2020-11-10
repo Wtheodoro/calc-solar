@@ -13,7 +13,9 @@ function Page () {
             <section>
                 <div className="circle"></div>
                 <header>
-                    <a href="#" className="logo"><img src={Logo}/></a>
+                    <div className="container">
+                        <a href="#" className="logo"><img src={Logo}/></a>
+                    </div>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Menu</a></li>

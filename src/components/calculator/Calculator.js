@@ -6,7 +6,7 @@ function Calculator () {
     const [consumption, setConsumption] = useState(0)
     const [city, setCity] = useState(5)
     const [minCost, setMinCost] = useState(30)
-    const [result, setResult] = useState(0)
+    const [result, setResult] = useState("")
 
     function getValue(event) {
         setConsumption(event.target.value)
@@ -23,7 +23,7 @@ function Calculator () {
     function calFotoVoltaic() {
         const fotoVoltaic = Math.ceil((((consumption-minCost)/30)/(city*0.8))/0.26)
 
-        setResult(fotoVoltaic)
+        setResult(fotoVoltaic+" placas")
         console.log(result)
     }
 
@@ -52,7 +52,7 @@ function Calculator () {
                         </select>
                     </div>
                     <div className="consumption">
-                        <label>Consumo médio anual:</label><br></br>
+                        <label>Consumo médio anual:</label>
                         {/* <input type="number" className="input" placeholder="Ex: 250"
                         onChangeText={(valueConsu) => valueConsu.length ? setConsumption(parseInt(valueConsu)): setConsumption(0)}
                         value={consumption.toString(10)}> */}
@@ -62,9 +62,9 @@ function Calculator () {
                     <div>
                         <button className="calc-button" onClick={calFotoVoltaic}>Calcular</button>
                     </div>
-                    <div className="result">
+                    <div className="result-box">
                         <label name="result"></label>
-                        <span>Quantidade de placas Fotovoltaicas necessárias: {result}</span>
+                        <span>{result}</span>
                     </div>
                 </container> 
             </>
