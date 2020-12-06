@@ -21,9 +21,12 @@ function Calculator () {
     }
  
     function calFotoVoltaic() {
-        const fotoVoltaic = Math.ceil((((consumption-minCost)/30)/(city*0.8))/0.26)
-
-        setResult(fotoVoltaic+" placas")
+        if ( consumption >= 0) {
+            const fotoVoltaic = Math.ceil((((consumption-minCost)/30)/(city*0.8))/0.26)
+            setResult(fotoVoltaic+" placas")
+        } else {
+            setResult("O valore de consumo deve ser positivo")
+        }
         console.log(result)
     }
 

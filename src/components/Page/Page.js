@@ -26,7 +26,8 @@ function Page () {
                 <div className="content">
                     <div className="textBox">
                         <h2>Não é apenas energia<br></br>É <span>Energia Solar</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Já se perguntou quantas placas fotovoltaicas são necessarias para abastecer seu lar? Esta é uma calculadora solar, onde você pode ter essa resposta.</p>
+                        {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> */}
                         <a href="#">Saiba mais</a>
                     </div>
                     <div className="calculator">
